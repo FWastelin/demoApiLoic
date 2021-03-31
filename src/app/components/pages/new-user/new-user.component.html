@@ -1,0 +1,28 @@
+<nb-card>
+  <nb-card-header>
+    <h3>New user</h3>
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+      <div>
+        <p>Nouvelle Utilisateur:</p>
+        <p>
+          <label>Nom:</label>
+          <input nbInput fullwidth type="text" formControlName="name" />&nbsp;
+        </p>
+        <p>
+          <label>Année de naissance:</label>
+          <input
+            nbInput
+            fullwidth
+            type="text"
+            formControlName="birth_year"
+          />&nbsp;
+        </p>
+        <p>
+          <label>ville</label>
+          <input nbInput fullwidth type="text" formControlName="ville" />&nbsp;
+        </p>
+        <button nbButton type="submit" [disabled]="fg.invalid">Ajouter</button>
+      </div>
+    </form>
+  </nb-card-header>
+</nb-card>

@@ -1,0 +1,31 @@
+<nb-card>
+  <nb-card-header>
+    <p>Info User{{ user[0]?.name }}</p>
+  </nb-card-header>
+  <nb-card-body>
+    <div>
+      <p>
+        Année de naissance: <span>{{ user[0]?.birth_year }}</span>
+      </p>
+    </div>
+    <div>
+      <p>
+        Ville: <span>{{ user[0]?.ville }}</span>
+      </p>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Capacités:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let capacity of userCapacity">
+            <td>{{ capacity.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

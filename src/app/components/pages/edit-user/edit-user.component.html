@@ -1,0 +1,47 @@
+<div>
+  <nb-card>
+    <nb-card-header>
+      <h3>Modifier le user {{ user[0]?.name }}</h3>
+    </nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div>
+          <p>
+            Nom :
+            <input
+              nbInput
+              fullwidth
+              type="text"
+              formControlName="name"
+              value="{{ user[0]?.name }}"
+            />
+          </p>
+          <p>
+            Anniversaire :
+            <input
+              nbInput
+              fullwidth
+              type="text"
+              formControlName="birth_year"
+              value="{{ user[0]?.birth_year }}"
+            />
+          </p>
+          <p>
+            Ville :
+            <input
+              nbInput
+              fullwidth
+              type="text"
+              formControlName="ville"
+              value="{{ user[0]?.ville }}"
+            />
+          </p>
+        </div>
+        <button nbButton type="submit" [disabled]="fg.invalid">Modifier</button>
+      </form>
+    </nb-card-body>
+    <nb-card-footer>
+      <p>{{ errorMessage }}</p>
+    </nb-card-footer>
+  </nb-card>
+</div>

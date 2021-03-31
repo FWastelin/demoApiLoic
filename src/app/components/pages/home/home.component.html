@@ -1,0 +1,39 @@
+<nb-card>
+  <nb-card-header>
+    <h3>Utilisateur</h3>
+  </nb-card-header>
+  <nb-card-body>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 30%">Nom</th>
+          <th style="width: 30%">Année de naissance</th>
+          <th style="width: 30%">Ville</th>
+          <th style="width: 10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.birth_year }}</td>
+          <td>{{ user.ville }}</td>
+          <td>
+            <button nbButton (click)="toEdit(user.id)" status="warning">
+              Edit</button
+            >&nbsp;
+          </td>
+          <td>
+            <button nbButton (click)="toDelete(user.id)" status="danger">
+              Delete</button
+            >&nbsp;
+          </td>
+          <td>
+            <button nbButton (click)="toInfo(user.id)" status="info">
+              Info</button
+            >&nbsp;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>
